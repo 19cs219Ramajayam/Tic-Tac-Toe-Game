@@ -1,0 +1,320 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::selection{
+  color: #fff;
+  background:#56baed;
+}
+/* start add by ramajayam */
+body{
+  background-image:url('image/city-park.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+.select_team{
+  display:none;
+}
+/* end add by ramajayam */
+
+.select-box, .play-board, .result-box{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+.select-box{
+  background: #fff;
+  padding: 20px 25px 25px;
+  border-radius: 5px;
+  /* max-width: 400px; */
+  max-width: 500px; /* add by ramajayam */
+  width: 100%;
+}
+.select-box header{
+  font-size: 30px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+.select-box .title{
+  font-size: 19px;
+  font-weight: 500;
+  margin: 5px 5px;
+}
+.select-box .options{
+  display: flex;
+  width: 100%;
+  /* add by ramajayam */
+  justify-content: center;
+  gap: 15px;
+}
+.options button{
+  /* width: 100%; */
+  width: fit-content;
+  font-size: 20px;
+  font-weight: 500;
+  /* padding: 10px 0; */
+  padding: 5px 20px;
+  border: none;
+  /* background: #56baed;*/
+  background: #7956ed;
+  border-radius: 5px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.options button:hover,
+.btn button:hover{
+  transform: scale(0.96);
+}
+.options button.playerX{
+  margin-right: 5px;
+}
+.options button.playerO{
+  margin-left: 5px;
+}
+.select-box .credit{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.select-box .credit a{
+  color: #56baed;
+  text-decoration: none;
+}
+.select-box .credit a:hover{
+  text-decoration: underline;
+}
+
+.play-board{
+  transform: translate(-50%, -50%) scale(1);
+}
+.play-board .details{
+  padding: 7px;
+  border-radius: 5px;
+  background: #fff;
+}
+.play-board .players{
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  gap:10px;
+}
+.players span{
+  margin-top: 3px;
+  color: #56baed;
+  white-space: nowrap;
+}
+.players .active{
+  background: #56baed;
+    color: white;
+    padding: 6px 6px;
+    border-radius: 5px;
+    margin-top: 0px;
+}
+.play-area{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.play-area section{
+  display: flex;
+  margin-bottom: 1px;
+}
+.play-area section span{
+  display: block;
+  height: 90px;
+  width: 100%;
+  margin: 2px;
+  /* color: #56baed; */
+  font-size: 40px;
+  line-height: 80px;
+  text-align: center;
+  border-radius: 5px;
+  background: #fff;
+  /* add by ramajayam */
+  cursor: pointer;
+}
+
+.result-box{
+  padding: 25px 20px;
+  border-radius: 5px;
+  max-width: 400px;
+  width: 100%;
+  opacity: 0;
+  text-align: center;
+  background: #fff;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.result-box.show{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.result-box .won-text{
+  font-size: 30px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+}
+.result-box .won-text p{
+  font-weight: 600;
+  margin: 0 5px;
+}
+.result-box .btn{
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+.btn button{
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border: none;
+  background: #56baed;
+  border-radius: 5px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* add css by ramajayam */
+.play-area span:hover{
+  transform: translateY(-1px);
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25); 
+}
+.options{
+  text-align: center;
+}
+.menu{
+  width: 100%;
+  background-color: #aba3a3;
+  z-index: 9999;
+  font-size: 20px;
+}
+.menu span svg{
+  color: white;
+  cursor: pointer;
+}
+.menu .open_setting{
+  position: absolute;
+  right: 5px;
+}
+.menu .back_to_home{
+  margin-left: 5px;
+}
+.menu span svg:hover{
+  color: brown;
+}
+.setting_menu{
+  background: aliceblue;
+  width: fit-content;
+  padding: 15px;
+  margin: 30vh auto;
+  position: relative;
+}
+.team_member span{
+  margin: 10px;
+}
+.background_image_list,.game_image_list{
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  width: 300px;
+  overflow-x: scroll;
+}
+.background_image_list img,.game_image_list img{
+  border-radius: 5px;
+  border: 1px solid #837e7d;
+  cursor: pointer;
+  padding:2px;
+}
+.background_image_list img.active,.game_image_list img.active{
+  border: 1px solid #f1c809;
+}
+
+.background_image_list img:hover,.game_image_list img:hover{
+  transform: translate(3px);
+}
+.label_title{
+  font-weight: bold;
+  font-size: 15px;
+}
+/* change game level style */
+.game_level_range {
+  width: 95%;
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.game_level_range:hover {
+  opacity: 1;
+}
+
+/* .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 24px;
+  border: 0;
+  background: url('contrasticon.png');
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 23px;
+  height: 24px;
+  border: 0;
+  background: url('contrasticon.png');
+  cursor: pointer;
+} */
+datalist {
+	display: flex;
+	justify-content: space-between;
+	color: hsl(45, 80%, 35%);
+	width: 18.9rem;
+	line-height: 1.75;
+	transform: translatey(.8rem);
+  margin-left: 13px;
+  margin-bottom:3px;
+}
+datalist  option {
+    z-index: 1;
+    display: flex;
+    position: relative;
+}
+datalist option:before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top:100%;
+  left: 50%;
+  height: 6px;
+  width: 1px;
+  background: hsl(45, 80%, 35%);
+  transform: translatey(-100%);
+}
+.close_setting_icon{
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  font-size: 20px;
+}
+svg,i,.team_list{
+  cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.play-area section{ 
+    border: 1px solid #989c9d; 
+    padding: 5px;
+}  
+.play-area{
+    border-radius: 10px; 
+    background: ghostwhite;
+}
+.play-area section span{
+    border: 1px solid #e64d48;
+}
+
+2:UI
+
+.play-area section span{
+    border: 1px solid darkgrey;
+    margin:0px;
+    border-radius:0px
+} 
+.play-area section{
+    margin-bottom:0px
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="library/bootstrap.min.css">
+
+</head>
+<body>
+  <div class="menu">
+    <span class="back_to_home"><i class="fa-solid fa-share fa-flip-horizontal"></i></span>
+    <span class="open_setting"><i class="fa-solid fa-gear"></i></span>
+  </div>
+  <h1 style="text-align:center;background: -webkit-linear-gradient(#ef6a6a, #4838e6);-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;">Tic Tac Toe</h1>
+  <!-- select box -->
+  <div class="select-box">
+    <h2 class="start_title">Game Time Delight</h2>
+    <hr>
+    <div class="content mt-3">
+      <div class="options">
+        <button class="singleplayer"  single_player="off"><i class="fa-solid fa-user"></i> Single Player</button>
+        <button class="multiplayer" multi_player="off"><i class="fa-solid fa-users"></i> Multi Player</button>
+      </div>
+      <div class="select_team">
+        <div class="title mt-3">Select Your Team</div>
+        <div class="options mt-3">
+          <button class="playerX">Player (X)</button>
+          <button class="playerO">Player (O)</button>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-success play_game_btn mt-2">Play Now</button>
+  </div> 
+
+  <!-- playboard section -->
+  <div class="play-board">
+    <div class="details">
+      <div class="players">
+        <span class="reset_active_btn xturn active"><i class="fa-solid fa-user"></i> X's Turn</span>
+        <span class="reset_active_btn oturn"><i class="fa-solid fa-user"></i> O's Turn</span>
+        <span class="reset_active_btn sturn"><i class="fa-solid fa-user"></i> <i class="fa-regular fa-square"></i>'s Turn</span>
+        <span class="reset_active_btn hturn"><i class="fa-solid fa-user"></i> <i class="fa-regular fa-heart"></i>'s Turn</span>
+        <span class="reset_active_btn stturn"><i class="fa-solid fa-user"></i> <i class="fa-regular fa-star"></i>'s Turn</span>
+      </div>
+    </div>
+    <div class="play-area">
+      <section>
+        <span class="box1 reset_box"></span>
+        <span class="box2 reset_box"></span>
+        <span class="box3 reset_box"></span>
+      </section>
+      <section>
+        <span class="box4 reset_box"></span>
+        <span class="box5 reset_box"></span>
+        <span class="box6 reset_box"></span>
+      </section>
+      <section>
+        <span class="box7 reset_box"></span>
+        <span class="box8 reset_box"></span>
+        <span class="box9 reset_box"></span>
+      </section>
+    </div>
+  </div>
+  <div class="setting_menu">
+    <i class="fa-regular fa-circle-xmark close_setting_icon"></i>
+    <div class="label_title" style="font-size: 20px;">Game Settings: </div> 
+    <hr>
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingGameLevel">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#game_level" aria-expanded="true" aria-controls="game_level">
+          Game Level
+        </button>
+      </h2>
+      <div id="game_level" class="accordion-collapse collapse show game_level" aria-labelledby="headingGameLevel" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <datalist id="ticks">
+            <option value="3" label="3"></option>
+            <option value="4" label="4"></option>
+            <option value="5" label="5"></option>
+            <option value="6" label="6"></option>
+            <option value="7" label="7"></option>
+            <option value="8" label="8"></option>
+            <option value="9" label="9"></option>
+            <option value="10" label="10"></option>
+          </datalist>
+          <input type="range"  min="3" max="10" value="2" class="game_level_range"/>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTeamList">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#team_member" aria-expanded="false" aria-controls="team_member">
+          Team Lists
+        </button>
+      </h2>
+      <div id="team_member" class="accordion-collapse collapse team_member" aria-labelledby="headingTeamList" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <span class="set_team btn btn-light active" data-team_name="x"><i class="fa-solid fa-x"></i></span>    
+          <span class="set_team btn btn-light active" data-team_name="o"><i class="fa-solid fa-o"></i></span>    
+          <span class="set_team btn btn-light active" data-team_name="s"><i class="fa-regular fa-square"></i></span>
+          <span class="set_team btn btn-light active" data-team_name="h"><i class="fa-regular fa-heart"></i></span>
+          <span class="set_team btn btn-light active" data-team_name="st"><i class="fa-regular fa-star"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingBackgroundThemes">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#background_themes" aria-expanded="false" aria-controls="background_themes">
+          Background Themes
+        </button>
+      </h2>
+      <div id="background_themes" class="accordion-collapse collapse" aria-labelledby="headingBackgroundThemes" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div class="background_image_list">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingBackgroundColor">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#conatiner_background_color" aria-expanded="false" aria-controls="conatiner_background_color">
+          Background Color
+        </button>
+      </h2>
+      <div id="conatiner_background_color" class="accordion-collapse collapse" aria-labelledby="headingBackgroundColor" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <input type="color" style="width: 100%;" name="background_color" id="background_color">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingGameThemes">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#game_themes" aria-expanded="false" aria-controls="game_themes">
+          Game Themes
+        </button>
+      </h2>
+      <div id="game_themes" class="accordion-collapse collapse" aria-labelledby="headingGameThemes" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div class="game_image_list">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- <div class="setting_menu">
+    <i class="fa-regular fa-circle-xmark close_setting_icon"></i>
+    <div class="label_title" style="font-size: 20px;">Game Settings: </div> 
+    <hr>
+    <div class="game_level">
+      <div class="label_title">Game Level : </div> 
+      <datalist id="ticks">
+        <option value="3" label="3"></option>
+        <option value="4" label="4"></option>
+        <option value="5" label="5"></option>
+        <option value="6" label="6"></option>
+        <option value="7" label="7"></option>
+        <option value="8" label="8"></option>
+        <option value="9" label="9"></option>
+        <option value="10" label="10"></option>
+      </datalist>
+      <input type="range"  min="3" max="10" value="2" class="game_level_range"/>
+    </div>
+    <div class="team_member">
+      <div class="label_title">Team Lists: </div> 
+      <span class="set_team btn btn-light active" data-team_name="x"><i class="fa-solid fa-x"></i></span>    
+      <span class="set_team btn btn-light active" data-team_name="o"><i class="fa-solid fa-o"></i></span>    
+      <span class="set_team btn btn-light active" data-team_name="s"><i class="fa-regular fa-square"></i></span>
+      <span class="set_team btn btn-light active" data-team_name="h"><i class="fa-regular fa-heart"></i></span>
+      <span class="set_team btn btn-light active" data-team_name="st"><i class="fa-regular fa-star"></i></span>
+    </div>
+    <div class="background_themes">
+      <div class="label_title">Background Themes: </div> 
+      <div class="background_image_list">
+
+      </div>
+
+    </div>
+    <div class="container_background_color">
+      <div class="label_title">Background Color: </div> 
+      <input type="color" style="width: 100%;" name="background_color" id="background_color">
+    </div>
+    <div class="game_themes">
+      <div class="label_title">Game Themes (Coming Soon): </div> 
+      <div class="game_image_list">
+
+      </div>
+
+    </div>
+  </div> -->
+<script src="library/fontawesome/js/all.min.js"></script>
+<script src="library/jquery.js"></script>
+<script src="library/swal.js"></script>
+<script src="library/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
